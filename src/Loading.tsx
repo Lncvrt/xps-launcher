@@ -1,5 +1,3 @@
-import "./App.css";
-
 function Loading() {
   return (
     <main className="container">

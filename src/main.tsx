@@ -4,6 +4,7 @@ import App from "./App";
 import UpdateRequired from "./UpdateRequired";
 import Loading from "./Loading";
 import { invoke } from "@tauri-apps/api/core";
+import "./App.css";
 
 document.addEventListener('contextmenu', (e) => e.preventDefault());
 document.addEventListener('dragstart', (e) => e.preventDefault());

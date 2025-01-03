@@ -1,5 +1,3 @@
-import "./App.css";
-
 function UpdateRequired() {
   return (
     <main className="container">
