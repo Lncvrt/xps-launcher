@@ -1,4 +1,4 @@
-function UpdateRequired() {
+export default function UpdateRequired() {
   return (
     <main className="container">
       <p>update required</p>
@@ -6,5 +6,3 @@ function UpdateRequired() {
     </main>
   );
 }
-
-export default UpdateRequired;

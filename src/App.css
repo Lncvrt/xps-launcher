@@ -26,7 +26,6 @@ img:hover {
   margin: 2px;
 }
 
-/* Container for the dropdown */
 .dropdown-container {
   display: flex;
   justify-content: center;
@@ -34,7 +33,6 @@ img:hover {
   padding: 10px;
 }
 
-/* Styling the dropdown itself */
 .dropdown {
   font-size: 16px;
   padding: 8px;
@@ -44,14 +42,36 @@ img:hover {
   transition: background-color 0.3s ease;
 }
 
-/* Change background color when hovered */
 .dropdown:hover {
   background-color: #222222;
 }
 
-/* Option styling */
 .dropdown option {
   font-size: 16px;
   padding: 8px;
   background-color: #1e1e1e;
+}
+
+.loader {
+  width: 80px;
+  height: 80px;
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #3498db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }

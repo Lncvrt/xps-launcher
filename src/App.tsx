@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { invoke } from "@tauri-apps/api/core";
 
-function App() {
+export default function App() {
   const [result, setResult] = useState(false);
   const [selectedVersion, setSelectedVersion] = useState<number>(0);
 
@@ -42,5 +42,3 @@ function App() {
     </main>
   );
 }
-
-export default App;
