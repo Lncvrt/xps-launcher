@@ -48,9 +48,7 @@ fn launch(ver: usize) -> bool {
 #[tauri::command]
 fn check_version() -> bool {
     let current_version = env!("CARGO_PKG_VERSION");
-    let url = "https://xps.lncvrt.xyz/getLauncherVersion.php";
-
-    println!("{}", current_version);
+    let url = "https://xps-api.lncvrt.xyz/versions/launcher/version";
 
     match get(url) {
         Ok(response) => {

@@ -2,9 +2,6 @@ import { useState } from "react";
 import { invoke } from "@tauri-apps/api/core";
 import "./App.css";
 
-document.addEventListener('contextmenu', (e) => e.preventDefault());
-document.addEventListener('dragstart', (e) => e.preventDefault());
-
 function App() {
   const [result, setResult] = useState(false);
   const [selectedVersion, setSelectedVersion] = useState<number>(0);
