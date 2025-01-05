@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>frames</key>
+	<dict>
+		<key>thesillydoggo.comment_emojis/emoji-icon-thicker.png</key>
+		<dict>
+			<key>spriteOffset</key>
+			<string>{0,0}</string>
+			<key>spriteSize</key>
+			<string>{64,64}</string>
+			<key>spriteSourceSize</key>
+			<string>{64,64}</string>
+			<key>textureRect</key>
+			<string>{{0,0},{64,64}}</string>
+			<key>textureRotated</key>
+			<false/>
+		</dict>
+		<key>thesillydoggo.comment_emojis/emoji-icon.png</key>
+		<dict>
+			<key>spriteOffset</key>
+			<string>{0,0}</string>
+			<key>spriteSize</key>
+			<string>{64,64}</string>
+			<key>spriteSourceSize</key>
+			<string>{64,64}</string>
+			<key>textureRect</key>
+			<string>{{0,66},{64,64}}</string>
+			<key>textureRotated</key>
+			<false/>
+		</dict>
+		<key>thesillydoggo.comment_emojis/geode-icon.png</key>
+		<dict>
+			<key>spriteOffset</key>
+			<string>{0,0}</string>
+			<key>spriteSize</key>
+			<string>{64,64}</string>
+			<key>spriteSourceSize</key>
+			<string>{64,64}</string>
+			<key>textureRect</key>
+			<string>{{0,132},{64,64}}</string>
+			<key>textureRotated</key>
+			<false/>
+		</dict>
+	</dict>
+	<key>metadata</key>
+	<dict>
+		<key>format</key>
+		<integer>3</integer>
+		<key>realTextureFileName</key>
+		<string>thesillydoggo.comment_emojis/GJ_EmojiUISheet-hd.png</string>
+		<key>size</key>
+		<string>{64,196}</string>
+		<key>textureFileName</key>
+		<string>thesillydoggo.comment_emojis/GJ_EmojiUISheet-hd.png</string>
+	</dict>
+</dict>
+</plist>

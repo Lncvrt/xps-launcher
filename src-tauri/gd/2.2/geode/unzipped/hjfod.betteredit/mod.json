@@ -1,0 +1,254 @@
+{
+	"geode": "4.0.1",
+	"version": "6.10.0-alpha.3",
+	"gd": {
+		"win": "2.2074",
+		"mac": "2.2074",
+		"android": "2.2074"
+	},
+	"id": "hjfod.betteredit",
+	"name": "BetterEdit",
+	"developers": ["HJfod"],
+	"description": "The Ultimate Editor Mod",
+	"links": {
+		"homepage": "https://betteredit.pro",
+		"source": "https://github.com/HJfod/BetterEdit",
+		"community": "https://discord.gg/UGHDfzQtpz"
+	},
+	"dependencies": [
+        {
+            "id": "geode.node-ids",
+            "version": "1.13.0",
+            "importance": "required" 
+        },
+		{
+			"id": "geode.custom-keybinds",
+			"version": "1.7.1",
+			"importance": "required"
+		},
+		{
+			"id": "hjfod.gmd-api",
+			"version": "1.2.1",
+			"importance": "required"
+		},
+		{
+			"id": "cvolton.level-id-api",
+			"version": "1.0.0",
+			"importance": "required"
+		},
+		{
+			"id": "hjfod.trashcan",
+			"version": "1.0.0",
+			"importance": "recommended"
+		},
+		{
+			"id": "hjfod.backups",
+			"version": "1.0.0",
+			"importance": "suggested"
+		},
+		{
+			"id": "alphalaneous.awesome_modifier_icons",
+			"version": "1.0.3",
+			"importance": "suggested"
+		},
+		{
+			"id": "alphalaneous.improvedlink",
+			"version": "1.0.5",
+			"importance": "suggested"
+		},
+		{
+			"id": "alphalaneous.improved_group_view",
+			"version": "1.0.5",
+			"importance": "suggested"
+		}
+    ],
+	"resources": {
+		"files": [
+			"scripts/*.swipe"
+		],
+		"spritesheets": {
+			"UISheet": [
+				"resources/*.png"
+			],
+			"ViewTabSheet": [
+				"resources/view/*.png"
+			]
+		},
+		"sprites": [
+			"resources/images/*.png"
+		]
+	},
+	"settings": {
+		"auto-save-rate": {
+			"type": "string",
+			"default": "Every 10 Minutes",
+			"name": "Auto-save",
+			"one-of": ["Every 10 Minutes", "Every 20 Minutes", "Every Hour", "Never"],
+			"description": "Automatically saves the level in the editor at the specified rate, as well as creates a backup. The backups created by autosave get automatically deleted after 3 new ones have been created to avoid using too much disk space"
+		},
+		"quick-save": {
+			"type": "bool",
+			"default": true,
+			"name": "Quick Save",
+			"description": "Makes level saving faster by saving to a backup file rather than directly to the save file"
+		},
+		"mouse-move-on-zoom": {
+			"type": "bool",
+			"default": true,
+			"name": "Zoom Towards Cursor",
+			"description": "When enabled and while holding down the CTRL key, zooming in the editor with the scroll wheel will be zoomed toward the cursor and not the center of the screen",
+			"platforms": ["desktop"]
+		},
+		"pinch-to-zoom": {
+			"type": "bool",
+			"default": true,
+			"name": "Pinch to Zoom",
+			"description": "When enabled, you can use two fingers to zoom",
+			"platforms": ["android"]
+		},
+		"show-zoom-text": {
+			"type": "bool",
+			"default": true,
+			"name": "Show Zoom Text",
+			"description": "When enabled, flashes the current zoom level as text when you zoom in / out in the editor"
+		},
+		"scale-factor": {
+			"type": "float",
+			"default": 1.00,
+			"max": 1.00,
+			"min": 0.6,
+			"name": "Scale Factor",
+			"description": "The factor the UI should be scaled by. <cr>Requires re-entering the editor!</c>",
+			"control": {
+                "slider": true,
+				"slider-step": 0.025
+            }
+		},
+		"scale-pause": {
+			"type": "bool",
+			"default": true,
+			"name": "Scale Pause Menu",
+			"description": "Whether the editor pause menu should be scaled according to the scale factor aswell"
+		},
+		"scale-build-tabs": {
+			"type": "bool",
+			"default": true,
+			"name": "Scale Build Tabs",
+			"description": "Whether the tabs above the object selection area should be scaled according to the scale factor aswell"
+		},
+		"better-font-select": {
+			"type": "bool",
+			"default": true,
+			"name": "New Font Selection Menu",
+			"description": "Replaces the old font select screen with a better one with scrolling"
+		},
+		"new-edit-menu": {
+			"type": "bool",
+			"default": true,
+			"name": "New Edit Menu",
+			"description": "Changes the object moving menu to have the move button grouped directionally rather than in a list. <cr>Requires re-entering the editor!</c>"
+		},
+		"view-menu": {
+			"type": "bool",
+			"default": true,
+			"name": "Show View Tab",
+			"description": "Adds a new fourth tab to the editor with buttons from quickly toggling on/off the visibility of features"
+		},
+		"new-color-menu": {
+			"type": "bool",
+			"default": true,
+			"name": "New Color Menu",
+			"description": "Changes the object color selection menu to show more channels aswell as previews for colors and special colors"
+		},
+		"larger-color-menu": {
+			"type": "bool",
+			"default": {
+				"win": false,
+				"mac": false,
+				"android": true
+			},
+			"name": "Larger Color Menu",
+			"description": "If you're using the <cr>New Color Menu</c>, this makes the color channel buttons a bit larger"
+		},
+		"hide-trigger-ui": {
+			"type": "bool",
+			"default": false,
+			"name": "Hide Trigger Backgrounds",
+			"description": "Hides the <cc>backgrounds</c> on all triggers when using sliders, like with <cl>shader</c> triggers"
+		},
+		"grid-size-controls": {
+			"type": "bool",
+			"default": true,
+			"name": "Show Grid Size Controls",
+			"description": "Shows controls in the UI for adjusting the size of the grid. <cr>Requires re-entering the editor!</c>",
+			"platforms": ["win", "android64"]
+		},
+		"show-grid-on-size-change": {
+			"type": "bool",
+			"default": true,
+			"name": "Show Grid on Size Change",
+			"description": "If the grid is currently hidden and you use the controls to change its size, its toggled on",
+			"platforms": ["win", "android64"]
+		},
+		"copy-paste-from-clipboard": {
+			"type": "bool",
+			"default": true,
+			"name": "Copy & Paste to Clipboard",
+			"description": "Copy & paste objects to/from system clipboard. This means that when you copy objects, you can paste it in a text editor in its text representation, and also paste it in to the editor later"
+		},
+		"dev-mode": {
+			"type": "bool",
+			"default": false,
+			"name": "Developer Mode",
+			"description": "Enables some features intended for Developers"
+		},
+		"pro-section": {
+			"type": "title",
+			"name": "Supporter Settings",
+			"description": "These settings are for features only available to <cp>Supporters</c>. Support BetterEdit to get access!"
+		},
+		"trigger-indicator-colors": {
+			"type": "string",
+			"one-of": ["None", "Selected Only", "All"],
+			"default": "Selected Only",
+			"name": "Dynamic Trigger Indicator Colors",
+			"description": "Control whether <cj>Trigger Indicators</c> should be colored based on the trigger, or if they should just be white"
+		},
+		"trigger-indicators-color-objects": {
+			"type": "bool",
+			"default": false,
+			"name": "Trigger Indicator Color Selection",
+			"description": "Control whether <cj>Trigger Indicators</c> should also color the target objects, or only point to them via the line"
+		},
+		"wip-section": {
+			"type": "title",
+			"name": "WIP Features",
+			"description": "These settings are for features that are currently Work-In-Progress. This means that <cr>these features may be unstable and unusable</c>, and are only included for testing purposes. <ca>Developer Mode</c> is required to enable them."
+		},
+		"run-script-button": {
+			"type": "bool",
+			"default": false,
+			"name": "Run Script Button (WIP)",
+			"description": "<cr>THIS FEATURE IS HEAVILY WIP</c>",
+			"enable-if": "dev-mode",
+			"enable-if-description": "This Feature is Heavily WIP!"
+		},
+		"better-select": {
+			"type": "bool",
+			"default": false,
+			"name": "Better Warp Selection (WIP)",
+			"description": "<cr>THIS FEATURE IS HEAVILY WIP</c>",
+			"enable-if": "saved:has-pro && dev-mode",
+			"enable-if-description": "This Feature is Supporter-Only & Heavily WIP!"
+		},
+		"enable-pro-ui": {
+			"type": "bool",
+			"default": false,
+			"name": "Enable Pro UI",
+			"description": "Give the Editor a <cy>New Look</c>! <cr>THIS FEATURE IS HEAVILY WIP</c>",
+			"enable-if": "saved:has-pro && dev-mode",
+			"enable-if-description": "This Feature is Supporter-Only & Heavily WIP!"
+		}
+	},
+	"tags": ["editor", "enhancement", "utility", "customization"]
+}
