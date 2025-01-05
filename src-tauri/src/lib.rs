@@ -1,10 +1,7 @@
-use std::process::{Command, Stdio};
-use std::os::windows::process::CommandExt;
+use reqwest::blocking::get;
 use std::env;
 use std::path::Path;
-use reqwest::blocking::get;
-
-const CREATE_NO_WINDOW: u32 = 0x08000000;
+use std::process::Command;
 
 #[tauri::command]
 fn launch(ver: usize) -> bool {
@@ -17,11 +14,7 @@ fn launch(ver: usize) -> bool {
     let path_check = Path::new(&path);
     let folder_check = Path::new(&folder);
 
-    if !path_check.exists() || !path_check.is_file() {
-        return false;
-    }
-
-    if !folder_check.exists() || !folder_check.is_dir() {
+    if (!path_check.exists() || !path_check.is_file()) || (!folder_check.exists() || !folder_check.is_dir()) {
         return false;
     }
 
@@ -29,19 +22,22 @@ fn launch(ver: usize) -> bool {
 
     let status = Command::new("cmd")
         .arg("/C")
-        .arg(format!(r#"start {}"#, path))
-        .creation_flags(CREATE_NO_WINDOW)
-        .stdout(Stdio::null())
-        .stderr(Stdio::null())
-        .status()
-        .expect("Failed to launch the app");
+        .arg("start")
+        .arg(format!("{}", exes[ver]))
+        .spawn();
 
     env::set_current_dir(current_dir).unwrap();
 
-    if status.success() {
-        true
-    } else {
-        false
+    match status {
+        Ok(mut child) => {
+            let exit_status = child.wait().unwrap();
+            if exit_status.success() {
+                true
+            } else {
+                false
+            }
+        }
+        Err(_) => false,
     }
 }
 
@@ -51,9 +47,9 @@ fn check_version() -> bool {
     let url = "https://xps-api.lncvrt.xyz/versions/launcher/version";
 
     match get(url) {
-        Ok(response) => {
-            response.text().map_or(false, |text| text.trim() == current_version)
-        }
+        Ok(response) => response
+            .text()
+            .map_or(false, |text| text.trim() == current_version),
         Err(_) => false,
     }
 }
@@ -61,6 +57,7 @@ fn check_version() -> bool {
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
     tauri::Builder::default()
+        .plugin(tauri_plugin_dialog::init())
         .plugin(tauri_plugin_opener::init())
         .invoke_handler(tauri::generate_handler![launch, check_version])
         .run(tauri::generate_context!())
