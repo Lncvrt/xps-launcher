@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# GD 1.9 & 2.2 "Profile" Folder
+
+src-tauri/gd/*/Profile/

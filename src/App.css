@@ -1,28 +1,59 @@
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+@import "tailwindcss";
+
+@font-face {
+  font-family: Pusab;
+  src: url("/fonts/pusab.ttf");
+}
+
+p,
+button {
+  font-family: Pusab, Arial;
+  text-shadow: 0.35vh 0.35vh 0vh rgba(0, 0, 0, 0.3);
+}
+
+.gdcolor {
+  color: #ffc800;
+}
 
 body {
-  @apply text-white bg-[#190032] select-none;
+  @apply text-white select-none;
 }
 
 img {
   transition: transform 0.3s ease-in-out;
 }
 
-img:hover {
-  transform: scale(1.08);
+.gdButton:active {
+  animation: bounceButton 0.25s ease-in-out forwards;
 }
 
-#right-bar {
+.gdButton {
+  cursor: pointer;
+}
+
+.gdButton-disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+#right-menu {
   display: flex;
   justify-content: flex-end;
   position: fixed;
   right: 0;
-  bottom: 0;
+  bottom: 3px; /* gay shadows cause this, it's exact though */
 }
 
-#right-bar img {
+#left-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  position: fixed;
+  left: 0.5rem;
+  bottom: 0.5rem;
+}
+
+#left-menu img {
   margin: 2px;
 }
 
@@ -56,10 +87,11 @@ img:hover {
   width: 80px;
   height: 80px;
   border: 5px solid #f3f3f3;
-  border-top: 5px solid #3498db;
+  border-top: 5px solid #3e3e3e;
   border-radius: 50%;
   animation: spin 1s linear infinite;
 }
+
 @keyframes spin {
   from {
     transform: rotate(0deg);
@@ -69,9 +101,51 @@ img:hover {
   }
 }
 
+@keyframes bounceButton {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.12);
+  }
+  75% {
+    transform: scale(1.06);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
 .center {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+}
+
+.button {
+  border: 1px solid white;
+  border-radius: 2px;
+  width: 265px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.button:focus {
+  border-width: 2px;
+  outline: none;
+}
+
+#setting-button-menu {
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#setting-button-menu button {
+  margin: 5px;
 }

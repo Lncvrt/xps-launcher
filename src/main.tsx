@@ -5,6 +5,7 @@ import UpdateRequired from "./UpdateRequired";
 import Loading from "./Loading";
 import { invoke } from "@tauri-apps/api/core";
 import "./App.css";
+import { getBackgroundColor } from "./lib/config";
 
 document.addEventListener('contextmenu', (e) => e.preventDefault());
 document.addEventListener('dragstart', (e) => e.preventDefault());
@@ -30,8 +31,16 @@ function Root() {
   return isVersionValid ? <App /> : <UpdateRequired />;
 }
 
-ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
-  <React.StrictMode>
-    <Root />
-  </React.StrictMode>
-);
+const setBgColor = async () => {
+  const bgcolor = `bg-[#${await getBackgroundColor()}]`;
+
+  ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
+    <React.StrictMode>
+      <div className={`${bgcolor} w-screen h-screen`} id="main-section">
+        <Root />
+      </div>
+    </React.StrictMode>
+  );
+}
+
+setBgColor();

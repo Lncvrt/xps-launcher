@@ -1,26 +1,25 @@
 [package]
 name = "xps-launcher"
-version = "3.0.0-1"
-description = "XPS 3.0 Launcher"
+version = "3.0.0-b1"
+description = "Official XPS Launcher!"
 authors = ["Lncvrt"]
 edition = "2021"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-
 [lib]
-# The `_lib` suffix may seem redundant but it is necessary
-# to make the lib name unique and wouldn't conflict with the bin name.
-# This seems to be only an issue on Windows, see https://github.com/rust-lang/cargo/issues/8519
 name = "xps_launcher_lib"
 crate-type = ["staticlib", "cdylib", "rlib"]
 
 [build-dependencies]
-tauri-build = { version = "2", features = [] }
+tauri-build = { version = "2.0.5", features = [] }
 
 [dependencies]
-tauri = { version = "2.2.0", features = [] }
-tauri-plugin-opener = "2.2.2"
+tauri = { version = "2.2.5", features = [] }
 serde = { version = "1.0.217", features = ["derive"] }
-serde_json = "1.0.134"
+serde_json = "1.0.138"
 tauri-plugin-dialog = "2.2.0"
 reqwest = { version = "0.12.9", features = ["blocking"] }
+tauri-plugin-process = "2.2.0"
+sysinfo = "0.33.1"
+open = "5.3.2"
+tauri-plugin-fs = "2.2.0"
+webbrowser = "1.0.3"

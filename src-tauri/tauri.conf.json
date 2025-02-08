@@ -1,7 +1,6 @@
 {
   "$schema": "https://schema.tauri.app/config/2",
   "productName": "XPS",
-  "version": "3.0.0-1",
   "identifier": "xyz.lncvrt.xps-launcher.app",
   "build": {
     "beforeDevCommand": "yarn dev",
@@ -13,7 +12,7 @@
     "windows": [
       {
         "title": "XPS",
-        "width": 650,
+        "width": 700,
         "height": 750,
         "resizable": false,
         "maximizable": false
@@ -25,14 +24,25 @@
   },
   "bundle": {
     "active": true,
-    "targets": "all",
+    "shortDescription": "Official XPS Launcher!",
+    "copyright": "© 2025 Lncvrt",
+    "publisher": "Lncvrt Development",
     "icon": [
       "icons/icon.icns",
       "icons/icon.png",
       "icons/icon.ico"
     ],
-    "resources": [
-      "gd/**/*"
-    ]
+    "resources": [],
+    "targets": ["nsis"],
+    "windows": {
+      "nsis": {
+        "installerIcon": "icons/icon.ico",
+        "languages": [
+          "English"
+        ],
+        "displayLanguageSelector": false
+      },
+      "allowDowngrades": false
+    }
   }
 }

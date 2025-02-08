@@ -1,7 +1,9 @@
-# Tauri + React + Typescript
+# XPS 3.0 Launcher
 
-This template should help get you started developing with Tauri, React and Typescript in Vite.
+The official XPS 3.0 Launcher.
 
-## Recommended IDE Setup
+## TODO
 
-- [VS Code](https://code.visualstudio.com/) + [Tauri](https://marketplace.visualstudio.com/items?itemName=tauri-apps.tauri-vscode) + [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer)
+- [ ] Auto Launcher Updater (Currently manual, may stay this way)
+- [ ] MacOS and Linux Support (Likely wine, if that can even be done. I don't know how MacOS works)
+- [ ] Proper android Version (Not sure how this will happen, if that will even happen)

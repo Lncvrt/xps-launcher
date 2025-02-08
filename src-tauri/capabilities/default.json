@@ -7,7 +7,15 @@
   ],
   "permissions": [
     "core:default",
-    "opener:default",
-    "dialog:default"
+    "dialog:default",
+    "process:default",
+    "fs:default",
+    "fs:allow-appconfig-write",
+    "fs:allow-appconfig-read",
+    "fs:allow-exists",
+    "fs:allow-create",
+    "fs:allow-mkdir",
+    "fs:allow-read-file",
+    "fs:allow-remove"
   ]
 }
