@@ -7,3 +7,5 @@ The official XPS 3.0 Launcher.
 - [ ] Auto Launcher Updater (Currently manual, may stay this way)
 - [ ] MacOS and Linux Support (Likely wine, if that can even be done. I don't know how MacOS works)
 - [ ] Proper android Version (Not sure how this will happen, if that will even happen)
+
+I forgot about this project and I'm not sure if I want to recontinue it. I will probably not though
